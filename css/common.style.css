@@ -1,0 +1,31 @@
+/* * {border: 1px solid black;} */
+
+/* Color CSS */
+body, .header {
+    background-color: rgb(26, 153, 196);
+    color: white;
+}
+.content {
+    background-color: white;
+    color: black;
+}
+/* Pads CSS */
+body {
+    margin: 0;
+}
+.content {
+    margin: 2%;
+    padding: 0.75% 2%;
+}
+.header {
+    padding: 0% 1%;
+}
+/* Border CSS */
+.content {
+    border: 1px solid darkslategray;
+    border-radius: 7px;
+}
+/* Size CSS */
+.datasheet-table {
+    width: 100%;
+}
