@@ -13,15 +13,18 @@ session_start();
     <div class="header">
         <h1>Datasheet</h1>
     </div>
-    <div class="content">
-        <p>Product Datasheet</p>
+    <div class="tab">
+        <button class="tablink" onclick="openTab(event, 'datasheet-product')">Products</button>
+        <button class="tablink" onclick="openTab(event, 'datasheet-account')">Accounts</button>
+    </div>
+    <div class="content tabcontent" id="datasheet-product">
         <table class="datasheet-table">
             <tr class="table-header">
-                <th class="number-col">No</th>
-                <th class="name-col">Product Name</th>
-                <th class="options-col">Product Price</th>
-                <th class="options-col">Product Stock</th>
-                <th class="options-col">Options</th>
+                <th class="col number">No</th>
+                <th class="col">Product Name</th>
+                <th class="col">Product Price</th>
+                <th class="col">Product Stock</th>
+                <th class="col">Options</th>
             </tr>
 
             <?php
@@ -32,8 +35,8 @@ session_start();
             while ($data = mysqli_fetch_array($result)) {
                 $no++;
                 ?>
-                <tr>
-                    <td class="number-col"><?php echo $no;?></td>
+                <tr class="row">
+                    <td class="col number"><?php echo $no;?></td>
                     <td><?php echo $data["ProductName"];?></td>
                     <td><?php echo $data["ProductPrice"];?></td>
                     <td><?php echo $data["ProductStock"];?></td>
@@ -43,14 +46,13 @@ session_start();
             ?>
         </table>
     </div>
-    <div class="content">
-        <p>Account Datasheet</p>
+    <div class="content tabcontent" id="datasheet-account">
         <table class="datasheet-table">
             <tr class="table-header">
-                <th class="number-col">No</th>
-                <th class="name-col">Account Name</th>
-                <th class="options-col">Account Permission</th>
-                <th class="options-col">Options</th>
+                <th class="col number">No</th>
+                <th class="col">Account Name</th>
+                <th class="col">Account Permission</th>
+                <th class="col">Options</th>
             </tr>
 
             <?php
@@ -61,8 +63,8 @@ session_start();
             while ($data = mysqli_fetch_array($result)) {
                 $no++;
                 ?>
-                <tr>
-                    <td class="number-col"><?php echo $no;?></td>
+                <tr class="row">
+                    <td class="col number"><?php echo $no;?></td>
                     <td><?php echo $data["AccountName"];?></td>
                     <td><?php echo $data["AccountPermission"];?></td>
                 </tr>
@@ -71,5 +73,23 @@ session_start();
             ?>
         </table>
     </div>
+    <script>
+    function openTab(event, tabName) {
+    var i, tabcontent, tablink;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    tablink = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablink.length; i++) {
+        tablink[i].className = tablink[i].className.replace(" active", "");
+    }
+    
+    document.getElementById(tabName).style.display = "block";
+    event.currentTarget.className += " active";
+    }
+    </script>
 </body>
 </html>

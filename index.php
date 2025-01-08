@@ -14,8 +14,21 @@ session_start();
         <h1>GronedyDork</h1>
     </div>
     <div class="content">
-        <p>test</p>
-        <a href="datasheet.php">go</a>
+        <div class="search-bar">
+            <input type="text" placeholder="Search..." class="search-input">
+        </div>
+        <div class="item-catalog">
+            <div class="item-container">
+                <img src="assets/placeholder-img.png" alt="placeholder">
+            </div>
+            <div class="item-container">
+                <img src="assets/placeholder-img.png" alt="placeholder">
+            </div>
+            <div class="item-container">
+                <img src="assets/placeholder-img.png" alt="placeholder">
+            </div>
+        </div>
+        <a href="datasheet.php"></a>
     </div>
 </body>
 </html>

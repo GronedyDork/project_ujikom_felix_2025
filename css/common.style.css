@@ -1,31 +1,32 @@
 /* * {border: 1px solid black;} */
 
-/* Color CSS */
-body, .header {
-    background-color: rgb(26, 153, 196);
-    color: white;
-}
-.content {
-    background-color: white;
-    color: black;
-}
-/* Pads CSS */
-body {
-    margin: 0;
-}
-.content {
-    margin: 2%;
-    padding: 0.75% 2%;
-}
-.header {
-    padding: 0% 1%;
-}
-/* Border CSS */
-.content {
-    border: 1px solid darkslategray;
-    border-radius: 7px;
-}
-/* Size CSS */
-.datasheet-table {
-    width: 100%;
-}
+/* Colors */
+body, .header {background-color: rgb(26, 153, 196); color: white;}
+.content, .tab, .tablink {background-color: white;color: black;}
+.tablink:hover, .row:hover {background-color: aqua;}
+.active, .table-header {background-color: wheat;}
+
+/* Padding */
+body, .tab button {margin: 0;}
+.content, .tab {margin: 2%;}
+.content, .tablink {padding: 2% 2%;}
+.header {padding: 0% 1%;}
+.tabcontent td, .table-header th {padding: 5px;}
+
+/* Border */
+.content, .tab, .item-container {border: 1px solid darkslategray; border-radius: 7px;}
+.tablink {border: none;}
+.tabcontent table {border-collapse: collapse;}
+
+/* Size */
+.datasheet-table, .item-container img, .search-bar {width: 100%;}
+.number {width: 0;}
+.item-container {width: 10%;}
+
+/* Visibility & Display */
+.tab, .item-catalog {display: flex;}
+.tabcontent {display: none;}
+
+/* Texts */
+.number {text-align: center;}
+* {font-family: 'Courier New', Courier, monospace;}
