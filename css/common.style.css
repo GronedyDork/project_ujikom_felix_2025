@@ -8,6 +8,7 @@ body, .header {background-color: rgb(26, 153, 196); color: white;}
 
 /* Padding */
 body, .tab button {margin: 0;}
+.item-container, .desc {margin: 1%;}
 .content, .tab {margin: 2%;}
 .content, .tablink {padding: 2% 2%;}
 .header {padding: 0% 1%;}
@@ -15,18 +16,20 @@ body, .tab button {margin: 0;}
 
 /* Border */
 .content, .tab, .item-container {border: 1px solid darkslategray; border-radius: 7px;}
+.item-container .desc, .price {border-top: 1px solid darkslategray;}
 .tablink {border: none;}
 .tabcontent table {border-collapse: collapse;}
 
 /* Size */
 .datasheet-table, .item-container img, .search-bar {width: 100%;}
 .number {width: 0;}
-.item-container {width: 10%;}
+.item-container {width: 20%; height: 20%; min-width: 5%; max-width: 750px; min-height: 5%; max-height: 750px;}
 
 /* Visibility & Display */
 .tab, .item-catalog {display: flex;}
 .tabcontent {display: none;}
+.item-container .desc {display: grid;}
 
 /* Texts */
-.number {text-align: center;}
+.number, .desc {text-align: center;}
 * {font-family: 'Courier New', Courier, monospace;}

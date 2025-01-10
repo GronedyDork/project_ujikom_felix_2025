@@ -4,10 +4,10 @@ $user = "root";
 $pass = "";
 $dbname = "project_ujikom_2025_felix";
 
-$connect = mysqli_connect(hostname: $host, username: $user, password: $pass, database: $dbname);
+$connect = mysqli_connect($host, $user, $pass, $dbname);
 
 try {
-    $pdo = new PDO(dsn: "mysql:host=$host;dbname=$dbname", username: $user, password: $pass);
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname",$user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
