@@ -1,18 +1,21 @@
-/* * {border: 1px solid black;} */
+* {border: 1px solid black;}
 
 /* Colors */
 body, .header {background-color: rgb(26, 153, 196); color: white;}
 .content, .tab, .tablink {background-color: white;color: black;}
-.tablink:hover, .row:hover {background-color: aqua;}
+.tablink:hover, .row:hover, .item-container:hover {background-color: aqua;}
 .active, .table-header {background-color: wheat;}
 
 /* Padding */
-body, .tab button {margin: 0;}
-.item-container, .desc {margin: 1%;}
+body, .tab button, .content h1 {margin: 0;}
+.content h1 {margin-bottom: 2%;}
+.item-container, .desc, .input-form>* {margin: 1%;}
 .content, .tab {margin: 2%;}
-.content, .tablink {padding: 2% 2%;}
+.input-form {margin: 10% 25%;}
+.content, .tablink {padding: 2%;}
 .header {padding: 0% 1%;}
-.tabcontent td, .table-header th {padding: 5px;}
+.item-container span {padding: 5px;}
+.tabcontent td, .table-header th, .input-form>* {padding: 10px;}
 
 /* Border */
 .content, .tab, .item-container {border: 1px solid darkslategray; border-radius: 7px;}
@@ -22,14 +25,24 @@ body, .tab button {margin: 0;}
 
 /* Size */
 .datasheet-table, .item-container img, .search-bar {width: 100%;}
+.item-container {flex: 1 1 200px;}
+.item-container {height: 300px;}
+.item-container img {height: 150px;}
 .number {width: 0;}
-.item-container {width: 20%; height: 20%; min-width: 5%; max-width: 750px; min-height: 5%; max-height: 750px;}
+.item-container {width: 20%; height: 20%; min-width: 5%; max-width: 200px; min-height: 5%; max-height: 400px;}
 
 /* Visibility & Display */
-.tab, .item-catalog {display: flex;}
+.tab, .item-catalog, .header, .desc {display: flex; flex-wrap: wrap; align-items: center;}
+.desc {flex-direction: column;}
 .tabcontent {display: none;}
-.item-container .desc {display: grid;}
+.item-container .desc, .input-form {display: grid;}
+.fl-right {float: right;}
+.item-container {cursor: pointer;}
+.item-container:hover {opacity: 80%;}
+.item-name, .stock, .price {overflow: hidden;}
+.item-container img {object-fit: cover;}
+.item-name, .stock, .price {white-space: nowrap; text-overflow: ellipsis;}
 
 /* Texts */
-.number, .desc {text-align: center;}
+.number, .desc, .input-form a {text-align: center;}
 * {font-family: 'Courier New', Courier, monospace;}

@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="header">
-        <h1>Datasheet</h1>
+        <h1><a href="index.php">GronedyDork</a></h1>
     </div>
     <div class="tab">
         <button class="tablink" onclick="openTab(event, 'datasheet-product')">Products</button>

@@ -7,13 +7,13 @@
     <title>Sign Up</title>
 </head>
 <body>
-    <form class="modal-content" action="functions/register.php" method="POST">
-        <div class="content">
+    <div class="header">
+        <h1><a href="index.php">GronedyDork</a></h1>
+    </div>
+    <form action="functions/register.php" method="POST">
+        <div class="content input-form">
             <h1>Sign Up</h1>
-            <div class="container">
-            <label for="usernameInput">Username</label>
             <input type="text" placeholder="Enter Username" name="usernameInput" required>
-            <label for="passwordInput">Password</label>
             <input type="password" placeholder="Enter Password" name="passwordInput" required>
             <a href="login.php">Log in to a existing account</a>
             <button type="submit">Sign Up</button>

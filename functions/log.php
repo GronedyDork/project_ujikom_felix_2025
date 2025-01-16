@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $usernameInput = $_POST["usernameInput"];
   $passwordInput = $_POST["passwordInput"];
 
-  // Permintaan untuk memeriksa apakah nama pengguna dan kata sandi sudah benar
+  // Checks for existing names
   $query = "SELECT * FROM `users_account_list` WHERE AccountName = ?";
   $stmt = $connect->prepare($query);
   $stmt->bind_param("s", $usernameInput);
