@@ -17,7 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_passwordInput = $userData["AccountPassword"];
     if (password_verify($passwordInput, $hashed_passwordInput)) {
       session_start();
-      $_SESSION["usernameInput"] = $usernameInput;
+      $_SESSION["AccountPermission"] = $userData["AccountPermission"];
+      $_SESSION["AccountID"] = $userData["AccountID"];
+      $_SESSION["AccountName"] = $usernameInput;
       header("Location: ../index.php");
       exit;
     } else { $error = "Invalid username or password"; }

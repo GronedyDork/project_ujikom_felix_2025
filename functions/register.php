@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->bind_param("ss", $usernameInput, $passwordInput);
             $stmt->execute();
             session_start();
-            $_SESSION["usernameInput"] = $usernameInput;
+            $_SESSION["AccountName"] = $usernameInput;
             if ($stmt->affected_rows > 0) {
                 $success = "Created new account successfully!";
             } else {

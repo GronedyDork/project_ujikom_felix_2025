@@ -11,10 +11,9 @@
     <div class="header">
         <h1><a href="index.php">GronedyDork</a></h1>
         <?php 
-        if (isset($_SESSION["usernameInput"])){
+        if (isset($_SESSION["AccountName"])){
             ?>
-            <span class="fl-right"><?php echo $_SESSION["usernameInput"]; ?></span>
-            <a href="datasheet.php">Test</a>
+            <span><?php echo $_SESSION["AccountName"];?></span>
             <a href="functions/logout.php">Log out</a>
             <?php
         } else {
@@ -27,6 +26,19 @@
     <div class="content">
         <div class="search-bar">
             <input type="text" placeholder="Search..." class="search-input">
+            <?php
+            if (isset($_SESSION["AccountPermission"])){
+                if ($_SESSION["AccountPermission"] === "administrator" || $_SESSION["AccountPermission"] === "employee"){
+                    ?>
+                    <a href="datasheet.php">Datasheet</a>
+                    <?php
+                } else {
+                    ?>
+                    <span>Test</span>
+                    <?php
+                }
+            }
+            ?>
         </div>
         <div class="item-catalog">
             <?php
@@ -41,7 +53,17 @@
                     <img src="assets/placeholder-img.png" alt="placeholder">
                     <div class="desc">
                         <span class="item-name"><?php echo $data['ProductName']?></span>
-                        <span class="stock"><?php echo $data['ProductStock']?> in stock</span>
+                        <?php
+                        if($data['ProductStock'] > 0){
+                            ?>
+                            <span class="stock"><?php echo $data['ProductStock']?> in stock</span>
+                            <?php
+                        } else {
+                            ?>
+                            <span class="stock">Out of Stock</span>
+                            <?php
+                        }
+                        ?>
                         <span class="price">Rp. <?php echo $data['ProductPrice']?></span>
                     </div>
                 </div>
